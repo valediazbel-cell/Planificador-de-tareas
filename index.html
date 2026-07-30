@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planificacion de Tares </title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+
+<body>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand">
+                Planifica tu tarea
+            </a>
+        </div>
+    </nav>
+    <br>
+
+    <div class="todo">
+        <h1>Nueva Tarea </h1>
+
+        <div class="formulario">
+            <input class="form-control form-control-lg" type="text" placeholder="Crear tarea"
+                aria-label=".form-control-lg example">
+            <input class="form-control" type="text" placeholder="Descripcion" aria-label="default input example">
+            <input class="form-control" type="date" placeholder="Fecha" aria-label="default input example">
+
+            <div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Prioridad
+                </a>
+
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item">Alta</a></li>
+                    <li><a class="dropdown-item">Media </a></li>
+                    <li><a class="dropdown-item">Baja</a></li>
+                </ul>
+            </div>
+
+
+        </div>
+        <br>
+        <button type="button" class="btn btn-outline-primary botonAgregar">Agregar</button>
+
+        <br>
+        <br>
+
+
+        <div class="listaTareas">
+            <p class="titoloListaTareas"> Lista de tareas</p>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
+                    <label class="form-check-label" for="firstCheckbox">Crear Html </label>
+                </li>
+                <li class="list-group-item">
+                    <input class="form-check-input me-1" type="checkbox" value="" id="secondCheckbox">
+                    <label class="form-check-label" for="secondCheckbox">Css</label>
+                </li>
+                <li class="list-group-item">
+                    <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
+                    <label class="form-check-label" for="thirdCheckbox">Ser feliz</label>
+                </li>
+            </ul>
+
+        </div>
+        <br>
+        <button type="button" class="btn btn-outline-primary botonEliminar">Eliminar</button>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
