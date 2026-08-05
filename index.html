@@ -14,7 +14,7 @@
     <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand">
-                Planifica tu tarea
+                📒 Planifica tu tarea
             </a>
         </div>
     </nav>
@@ -24,18 +24,18 @@
         <h1>Nueva Tarea </h1>
 
         <div class="formulario">
-            <input class="form-control form-control-lg" type="text" placeholder="Crear tarea"
-                aria-label=".form-control-lg example">
-            <input class="form-control" type="text" placeholder="Descripcion" aria-label="default input example">
-            <input class="form-control" type="date" placeholder="Fecha" aria-label="default input example">
+            
+            <input class="form-control texFormu" type="text" placeholder="Crear Tarea" aria-label="default input example">
+            <input class="form-control texFormu" type="text" placeholder="Descripcion" aria-label="default input example">
+            <input class="form-control texFormu" type="date" placeholder="Fecha" aria-label="default input example">
 
             <div class="dropdown">
-                <a class="btn btn-secondary dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                <a class="btn btn-secondary dropdown-toggle prioridad" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
                     Prioridad
                 </a>
 
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu priorlista">
                     <li><a class="dropdown-item">Alta</a></li>
                     <li><a class="dropdown-item">Media </a></li>
                     <li><a class="dropdown-item">Baja</a></li>
@@ -54,23 +54,41 @@
         <div class="listaTareas">
             <p class="titoloListaTareas"> Lista de tareas</p>
             <ul class="list-group">
-                <li class="list-group-item">
+                <li class="list-group-item tarea" >
+                   <div>
                     <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
                     <label class="form-check-label" for="firstCheckbox">Crear Html </label>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-outline-primary botonEliminar">Eliminar</button>
+                    </div>
+
                 </li>
-                <li class="list-group-item">
+                <li class="list-group-item tarea">
+                    <div>
                     <input class="form-check-input me-1" type="checkbox" value="" id="secondCheckbox">
                     <label class="form-check-label" for="secondCheckbox">Css</label>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-outline-primary botonEliminar">Eliminar</button>
+                    </div>
+
                 </li>
-                <li class="list-group-item">
+                <li class="list-group-item tarea">
+                    <div>
                     <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
                     <label class="form-check-label" for="thirdCheckbox">Ser feliz</label>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-outline-primary botonEliminar">Eliminar</button>
+                    </div>
                 </li>
             </ul>
 
+
         </div>
-        <br>
-        <button type="button" class="btn btn-outline-primary botonEliminar">Eliminar</button>
+
+
 
     </div>
 
