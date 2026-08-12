@@ -57,6 +57,7 @@ h1 {
 }
 
 .priorlista{
+
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
 }
@@ -97,9 +98,6 @@ h1 {
     border-color: #80D1D8 !important;
     color: #067e89 !important;
     margin: center;
-    
-    
-
 
 }
 
@@ -125,10 +123,22 @@ h1 {
     border-color:#075867;
 }
 
-.botonEliminar-child:active, :not(.botonElimina-check)+.btn:active {
-    
-    background-color: #ec6cce;
-    border-color:#670759;
+
+/*Alerts*/
+.alertFecha {
+    grid-column: 3;
+    grid-row: 2;
 }
+
+.alertPrio {
+   grid-column: 4;
+    grid-row: 2;
+}
+/*Ocultar alert*/
+
+.ocultaAlert {
+  display: none;
+}
+
 
 

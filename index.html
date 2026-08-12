@@ -25,55 +25,38 @@
 
         <div class="formulario">
 
-            <!-- <input id="nombreTarea" class="form-control texFormu " type="text" placeholder="Crear Tarea"
-                aria-label="default input example" required>
-            <div class="invalid-feedback">
-                Debe ingresar el nombre de la tarea
-            </div>-->
+
             <form class="neets-validated formulario1">
 
                 <div class="mb-3">
                     <label for="validationTextarea" novalidate class="form-label texFormu">Tarea</label>
                     <textarea class="form-control texFormu" id="validationTarea" placeholder="Crear Tarea"
                         required></textarea>
-                    <div class="invalid-feedback">
-                        Debe ingresar el nombre de la tarea
+                    <div class="alert alert-danger alertTarea ocultaAlert " id="alertTarea" role="alert">
+
                     </div>
+
                 </div>
-                <!-- <input id="descripcionTarea" class="form-control texFormu" type="text" placeholder="Descripcion"
-                    aria-label="default input example" required>
-                <div class="invalid-feedback">
-                    Debe ingresar la descripcion
-                </div>-->
+
                 <div class="mb-3">
                     <label for="validationTextarea" novalidate class="form-label texFormu">Descripcion</label>
                     <textarea class="form-control texFormu" id="validationDes" placeholder="Descripcion"
                         required></textarea>
-                    <div class="invalid-feedback">
-                        Debe ingresar la descripcion
+                    <div class="alert alert-danger alertDes ocultaAlert" id="alertDes" role="alert">
+
                     </div>
                 </div>
                 <input id="validacionfecha" novalidate class="form-control texFormu" type="date" placeholder="Fecha"
                     aria-label="default input example" required>
-                    
-                <div class="invalid-feedback">
-                    Debe ingresar la fecha
+
+                <div class="alert alert-danger alertFecha ocultaAlert" id="alertFecha" role="alert">
+
                 </div>
 
-                <!-- <div class="dropdown">
-                    <a class="btn btn-secondary dropdown-toggle prioridad" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Prioridad
-                    </a>
 
-                    <ul class="dropdown-menu priorlista">
-                        <li><a class="dropdown-item">Alta</a></li>
-                        <li><a class="dropdown-item">Media </a></li>
-                        <li><a class="dropdown-item">Baja</a></li>
-                    </ul>
-                </div>-->
                 <div class="mb-3">
-                    <select id="validationprio" class="form-select prioridad priorlista" required aria-label="select example">
+                    <select id="validationprio" class="form-select prioridad priorlista" required
+                        aria-label="select example">
                         <option value="">Prioridad</option>
                         <option value="1">Alta</option>
                         <option value="2">Media</option>
@@ -83,9 +66,13 @@
                     </div>
 
                 </div>
+                <div class="alert alert-danger alertPrio ocultaAlert" id="alertPrio" role="alert">
+
+                </div>
             </form>
             <br>
-            <button type="button" onclick="validFormFieldInput()" class="btn btn-outline-primary botonAgregar">Agregar</button>
+            <button type="button" onclick="validFormFieldInput()"
+                class="btn btn-outline-primary botonAgregar">Agregar</button>
 
             <br>
             <br>
