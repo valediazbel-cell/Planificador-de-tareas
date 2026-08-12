@@ -32,13 +32,20 @@ h1 {
 /*FORMULARIO*/
 
 .formulario {
-    display: grid;
+    display: contents;
     gap: 10px;
     grid-template-columns: repeat(5, 1fr);
     text-align: center;
     margin-left: auto;
     
 
+}
+.formulario1 {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+    text-align: center;
+    margin-left: auto;
 }
 
 .texFormu {
@@ -90,7 +97,7 @@ h1 {
     border-color: #80D1D8 !important;
     color: #067e89 !important;
     margin: center;
-    margin: 0 % ,30%;
+    
     
 
 
@@ -118,7 +125,7 @@ h1 {
     border-color:#075867;
 }
 
-.botonEliminar-child:active, :not(.btn-check)+.btn:active {
+.botonEliminar-child:active, :not(.botonElimina-check)+.btn:active {
     
     background-color: #ec6cce;
     border-color:#670759;
