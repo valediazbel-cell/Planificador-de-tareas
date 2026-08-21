@@ -1,3 +1,10 @@
+
+const taskManager = new TaskManager();
+console.log(taskManager.tasks);
+
+
+
+
 let validationTarea = document.getElementById("validationTarea");
 let validationDes = document.getElementById("validationDes");
 let validacionfecha = document.getElementById("validacionfecha");
@@ -51,4 +58,13 @@ function validFormFieldInput(data) {
 
 
 }
+
+const checkboxes =document.querySelectorAll(".form-check-input")
+
+checkboxes.forEach(function(checkbox){
+    checkbox.addEventListener("change",function(){
+        const tarea = checkbox.closest(".tarea");
+tarea.classList.toggle("tarea-completada")
+    });
+});
 
