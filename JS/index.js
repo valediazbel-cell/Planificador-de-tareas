@@ -28,28 +28,28 @@ function validFormFieldInput(data) {
 
 
     if (nombre.trim() === "") {
-        alertTarea.innerHTML = "esta vacio, coloca la tarea"
+        alertTarea.innerHTML = "Ingresa el nombre de la tarea"
         alertTarea.classList.remove("ocultaAlert");
         console.log("esta vacio, coloca la tarea")
     } else {
         alertTarea.classList.add("ocultaAlert");
     }
     if (descricion.trim() === "") {
-        alertDes.innerHTML = "esta vacio,coloca la descripcion"
+        alertDes.innerHTML = "La descripción es obligatoria"
         alertDes.classList.remove("ocultaAlert");
         console.log("esta vacio,coloca la descripcion ")
     } else {
         alertDes.classList.add("ocultaAlert");
     }
     if (fecha.trim() === "") {
-        alertFecha.innerHTML = "esta vacio,coloca la fecha"
+        alertFecha.innerHTML = "Selecciona una fecha"
         alertFecha.classList.remove("ocultaAlert");
         console.log("esta vacio,coloca la fecha")
     }else {
         alertFecha.classList.add("ocultaAlert");
     }
     if (prioridad.trim() === "") {
-        alertPrio.innerHTML = "esta vacio, coloca la prioridad"
+        alertPrio.innerHTML = "Selecciona una prioridad"
         alertPrio.classList.remove("ocultaAlert");
         console.log("esta vacio, coloca la prioridad")
     }else {
