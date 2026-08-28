@@ -23,15 +23,15 @@
     <div class="todo">
         <h1>Nueva Tarea </h1>
 
-        <div class="formulario">
+        <div class="formulario" id="newTaskForm">
 
 
             <form class="neets-validated formulario1">
 
                 <div class="mb-3">
                     <label for="validationTextarea" novalidate class="form-label titulotexFormu">Tarea</label>
-                    <textarea class="form-control texFormu" id="validationTarea" placeholder="Crear Tarea"
-                        required></textarea>
+                    <textarea class="form-control texFormu" id="validationTarea" id="nueva-tarea"
+                        placeholder="Crear Tarea" required></textarea>
                     <div class="alert alert-danger alertTarea ocultaAlert " id="alertTarea" role="alert">
 
                     </div>
@@ -66,55 +66,55 @@
                     </select>
                     <div class="alert alert-danger alertPrio ocultaAlert" id="alertPrio" role="alert"></div>
                 </div>
+                <br>
+                <button type="submit" class="btn btn-outline-primary botonAgregar">Agregar</button>
             </form>
-            <br>
-            <button type="button" onclick="validFormFieldInput()"
-                class="btn btn-outline-primary botonAgregar">Agregar</button>
 
-            <br>
-            <br>
+        </div>
+        <br>
+        <br>
 
 
-            <div class="listaTareas">
-                <p class="titoloListaTareas"> Lista de tareas</p>
-                <ul class="list-group">
-                    <li class="list-group-item tarea">
-                        <div>
-                            <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
-                            <label class="form-check-label" for="firstCheckbox">Crear Html </label>
-                        </div>
-                        <div>
-                            <button type="button" class="btn btn-outline-primary botonEliminar">Eliminar</button>
-                        </div>
+        <div class="listaTareas">
+            <p class="titoloListaTareas"> Lista de tareas</p>
+            <ul class="list-group" id="lista-tareas">
+                <li class="list-group-item tarea">
+                    <div>
+                        <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
+                        <label class="form-check-label" for="firstCheckbox">Crear Html </label>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-outline-primary botonEliminar">Eliminar</button>
+                    </div>
 
-                    </li>
-                    <li class="list-group-item tarea">
-                        <div>
-                            <input class="form-check-input me-1" type="checkbox" value="" id="secondCheckbox">
-                            <label class="form-check-label" for="secondCheckbox">Css</label>
-                        </div>
-                        <div>
-                            <button type="button" class="btn btn-outline-primary botonEliminar">Eliminar</button>
-                        </div>
+                </li>
+                <li class="list-group-item tarea">
+                    <div>
+                        <input class="form-check-input me-1" type="checkbox" value="" id="secondCheckbox">
+                        <label class="form-check-label" for="secondCheckbox">Css</label>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-outline-primary botonEliminar">Eliminar</button>
+                    </div>
 
-                    </li>
-                    <li class="list-group-item tarea">
-                        <div>
-                            <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
-                            <label class="form-check-label" for="thirdCheckbox">Ser feliz</label>
-                        </div>
-                        <div>
-                            <button type="button" class="btn btn-outline-primary botonEliminar">Eliminar</button>
-                        </div>
-                    </li>
-                </ul>
-
-
-            </div>
-
+                </li>
+                <li class="list-group-item tarea">
+                    <div>
+                        <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
+                        <label class="form-check-label" for="thirdCheckbox">Ser feliz</label>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-outline-primary botonEliminar">Eliminar</button>
+                    </div>
+                </li>
+            </ul>
 
 
         </div>
+
+
+
+    </div>
 
     </div>
 
