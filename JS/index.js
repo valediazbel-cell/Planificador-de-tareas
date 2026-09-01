@@ -53,25 +53,62 @@ console.log ("todo lleno");
 
 function pintarTarea(){
 let listaTareas = document.getElementById("lista-tareas");
+listaTareas.replaceChildren();
 
 for (let k = 0; k< taskManager.tasks.length; k++){
     let nuevaTarea = document.createElement("li");
-    nuevaTarea.classList.add ("list-grup-item","tarea");
+    nuevaTarea.classList.add ("list-group-item","tarea");
 
-    nuevaTarea.innerHTML = '<div>'+
-                        '<input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">'+
-                        '<label class="form-check-label" for="firstCheckbox">'+ taskManager.tasks[k].name+'</label>'+
+    nuevaTarea.innerHTML = 
+    '<div>'+
+                        '<input class="form-check-input me-1 checkTarea" type="checkbox" value="" id="' + taskManager.tasks[k].id + '" >'+
+                        '<label class="form-check-label " for="firstCheckbox">'+ taskManager.tasks[k].name+'</label>'+
                           ' </div>'+
+                          
+                          '<div>'+ taskManager.tasks[k]. description+' </div>'+
+                           '<div>'+ taskManager.tasks[k].dueDate+' </div>'+
+                            '<div>'+ taskManager.tasks[k]. prioridad+' </div>'+
+                            '<div>'+ taskManager.tasks[k].status+' </div>'+
                    '<div>'+
-                      '  <button type="button" class="btn btn-outline-primary botonEliminar">Eliminar</button>'+
+                      '  <button type="button" class="btn btn-outline-primary botonEliminar" data-borrar="' +k + '">Eliminar</button>'+
                     '</div>'
 
                     listaTareas.appendChild(nuevaTarea);
                  
 }
 
+const hechaTareas = document.querySelectorAll(".checkTarea");
+hechaTareas.forEach( function(checkbox) {
+       checkbox.addEventListener("change", function(event) {
+        if (event.target.checked) {
+            
+            console.log("Está hecha la tarea:"+ event.target.id);
+        
+        }
+    });
+});
+
+const eliminarTareas = document.querySelectorAll(".botonEliminar");
+eliminarTareas.forEach(function(boton) {
+       boton.addEventListener("click", function(event) {
+        
+            
+            console.log("click emilinar tarea" + event.target.dataset.borrar);
+           
+            taskManager.tasks.splice( parseInt(event.target.dataset.borrar) ,1);
+
+            pintarTarea();
+        
+    });
+});
+
+
 
 }
+
+
+
+
 
 
 
@@ -80,6 +117,10 @@ let validationTarea = document.getElementById("validationTarea");
 let validationDes = document.getElementById("validationDes");
 let validacionfecha = document.getElementById("validacionfecha");
 let validationprio = document.getElementById("validationprio");
+
+
+
+
 
 //ALERTAS
 let alertTarea = document.getElementById("alertTarea")

@@ -13,11 +13,20 @@ class TaskManager {
         name:name,
         description:description,
         dueDate:dueDate,
-        priorida:priorida,
+        prioridad:priorida,
         status:'PORHACER'
     });
  }
 
+ deleteTask(taskId) {
+ const newTasks = [];
+ for (let task of this.tasks) {
+ if (task.id !== taskId) {
+ newTasks.push(task);
+ }
+ }
+ this.tasks = newTasks;
+}
  
 }
 
