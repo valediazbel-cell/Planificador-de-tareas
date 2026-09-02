@@ -14,7 +14,7 @@ class TaskManager {
         description:description,
         dueDate:dueDate,
         prioridad:priorida,
-        status:'PORHACER'
+        status:'Por Hacer'
     });
  }
 
