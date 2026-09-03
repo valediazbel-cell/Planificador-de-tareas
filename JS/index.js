@@ -107,7 +107,7 @@ function pintarTarea() {
                 taskManager.tasks[parseInt(event.target.dataset.status)].status ="Hecho";
                 console.log("click lista tarea" + event.target.dataset.status);
 
-               /* pintarTarea();*/
+               pintarTarea();
             } 
 
             
