@@ -71,37 +71,46 @@ function pintarTarea() {
         nuevaTarea.classList.add("list-group-item", "tarea");
 
         nuevaTarea.innerHTML =
-        '<div class="filaTarea">' +
+            '<div class="filaTarea">' +
             '<div class="tituloYdescri">' +
-               '<div>' +
-                '<input class="form-check-input me-1 checkTarea" type="checkbox" value="" id="' + taskManager.tasks[k].id + '" >' +
-                '<label class="form-check-label titulos-tarea" for="firstCheckbox">' + taskManager.tasks[k].name + '</label>' +
-                ' </div>' +
-                '<div class= "descripcion-tarea">' + taskManager.tasks[k].description + ' </div>' +
-        
+            '<div>' +
+            '<input class="form-check-input me-1 checkTarea" data-status="' + k + '" type="checkbox" value="" id="' + taskManager.tasks[k].id + '" >' +
+            '<label class="form-check-label titulos-tarea" for="firstCheckbox">' + taskManager.tasks[k].name + '</label>' +
+            ' </div>' +
+            '<div class= "descripcion-tarea">' + taskManager.tasks[k].description + ' </div>' +
+
             '</div>' +
             '<div class="fec-pri-sta-borr">' +
-                '<div>' + taskManager.tasks[k].dueDate + ' </div>' +
-                '<div class="prioridad-' + taskManager.tasks[k].prioridad + '">' + taskManager.tasks[k].prioridad + ' </div>' +
-                '<div>' + taskManager.tasks[k].status + ' </div>' +
-                '<div>' +
-                '  <button type="button" class="btn btn-outline-primary botonEliminar" data-borrar="' + k + '">Eliminar</button>' +
-                '</div>' +
+            '<div>' + taskManager.tasks[k].dueDate + ' </div>' +
+            '<div class="prioridad-' + taskManager.tasks[k].prioridad + '">' + taskManager.tasks[k].prioridad + ' </div>' +
+            '<div   >' + taskManager.tasks[k].status + ' </div>' +
+            '<div>' +
+            '  <button type="button" class="btn btn-outline-primary botonEliminar" data-borrar="' + k + '">Eliminar</button>' +
             '</div>' +
-        '</div>'
+            '</div>' +
+            '</div>'
         listaTareas.appendChild(nuevaTarea);
 
     }
 
-
+    
     const hechaTareas = document.querySelectorAll(".checkTarea");
     hechaTareas.forEach(function (checkbox) {
         checkbox.addEventListener("change", function (event) {
             if (event.target.checked) {
+              
 
                 console.log("Está hecha la tarea:" + event.target.id);
+                const tareaListas = event.target.closest(".tarea");
+                tareaListas.classList.add("tareaCompletada");
+                
+                taskManager.tasks[parseInt(event.target.dataset.status)].status ="Hecho";
+                console.log("click lista tarea" + event.target.dataset.status);
 
-            }
+               /* pintarTarea();*/
+            } 
+
+            
         });
     });
 
@@ -118,6 +127,7 @@ function pintarTarea() {
 
         });
     });
+    
     localStorage.setItem("tarea", JSON.stringify(taskManager.tasks))
 
 

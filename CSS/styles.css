@@ -90,9 +90,9 @@ h1 {
 }
 
 .filaTarea {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    gap: 20px;
+    display: grid !important;
+    grid-template-columns: 3fr 1fr !important;
+    gap: 20px !important;
 }
 
 .tituloYdescri {
@@ -235,13 +235,13 @@ h1 {
 
 /*Tarea lista*/
 
-.tarea-completada {
+.tareaCompletada {
     background: linear-gradient(to right, #bdefd9, #FFFFFF) !important;
 
 
 }
 
-.tarea-completada .form-check-label {
+.tareaCompletada .form-check-label {
     text-decoration: line-through !important;
     color: #084228 !important;
 }
