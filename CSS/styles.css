@@ -3,13 +3,34 @@
 
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
+
+
 
 body {
     background: linear-gradient(95deg, #c1e1f1e0, #cdf7eee0);
-    /* background-color: #c1e1f1;*/
     color: #334155;
+     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
+
+.crear {
+    background-color: #f7f770;
+    padding: 0px 5px;
+    border-radius: 8px;
+    border: 2px solid #d9af26;
+    font-size: 16px;
+}
+
+.crear:hover {
+    background-color: #eee05f;
+
+}
+
 
 h1 {
     text-align: center;
@@ -214,8 +235,6 @@ h1 {
 }
 
 
-
-
 /*Alerts*/
 .alertFecha {
     grid-column: 3;
@@ -273,7 +292,40 @@ h1 {
 }
 
 
+/*FOOTER*/
+.footer {
+    background-color: #10AAB6;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 30px;
+    padding-top: 20px;
+}
 
+.footer-bottom {
+    color: #555252;
+    background-color: #a8eaf0;
+    padding: 0px 5px;
+    border-radius: 8px;
+    width: 150px;
+
+}
+
+.imagenRedes {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 40%;
+
+}
+
+
+.imagenRedes:hover {
+    transform: scale(1.15) rotate(5deg);
+}
+
+.gmail {
+    color: white;
+}
 
 /*Para celular */
 
