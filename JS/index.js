@@ -70,11 +70,17 @@ function pintarTarea() {
         let nuevaTarea = document.createElement("li");
         nuevaTarea.classList.add("list-group-item", "tarea");
 
+        let check =  "";
+        if (taskManager.tasks[k].status == "Hecho") {
+            nuevaTarea.classList.add("tareaCompletada");
+           check = "checked"
+        }
+
         nuevaTarea.innerHTML =
             '<div class="filaTarea">' +
             '<div class="tituloYdescri">' +
             '<div>' +
-            '<input class="form-check-input me-1 checkTarea" data-status="' + k + '" type="checkbox" value="" id="' + taskManager.tasks[k].id + '" >' +
+            '<input class="form-check-input me-1 checkTarea" data-status="' + k + '" type="checkbox"   value=""  id="' + taskManager.tasks[k].id + '" '+ check +' >' +
             '<label class="form-check-label titulos-tarea" for="firstCheckbox">' + taskManager.tasks[k].name + '</label>' +
             ' </div>' +
             '<div class= "descripcion-tarea">' + taskManager.tasks[k].description + ' </div>' +
@@ -83,7 +89,7 @@ function pintarTarea() {
             '<div class="fec-pri-sta-borr">' +
             '<div>' + taskManager.tasks[k].dueDate + ' </div>' +
             '<div class="prioridad-' + taskManager.tasks[k].prioridad + '">' + taskManager.tasks[k].prioridad + ' </div>' +
-            '<div   >' + taskManager.tasks[k].status + ' </div>' +
+            '<div class="status-' + taskManager.tasks[k].status + '">' + taskManager.tasks[k].status + ' </div>' +
             '<div>' +
             '  <button type="button" class="btn btn-outline-primary botonEliminar" data-borrar="' + k + '">Eliminar</button>' +
             '</div>' +
@@ -93,24 +99,27 @@ function pintarTarea() {
 
     }
 
-    
+
     const hechaTareas = document.querySelectorAll(".checkTarea");
     hechaTareas.forEach(function (checkbox) {
         checkbox.addEventListener("change", function (event) {
             if (event.target.checked) {
-              
+
 
                 console.log("Está hecha la tarea:" + event.target.id);
-                const tareaListas = event.target.closest(".tarea");
-                tareaListas.classList.add("tareaCompletada");
-                
-                taskManager.tasks[parseInt(event.target.dataset.status)].status ="Hecho";
+
+                taskManager.tasks[parseInt(event.target.dataset.status)].status = "Hecho";
                 console.log("click lista tarea" + event.target.dataset.status);
 
-               pintarTarea();
-            } 
+                pintarTarea();
 
+            } else {
+            taskManager.tasks[parseInt(event.target.dataset.status)].status = "Por Hacer";
             
+              pintarTarea();
+            }
+
+
         });
     });
 
@@ -127,7 +136,7 @@ function pintarTarea() {
 
         });
     });
-    
+
     localStorage.setItem("tarea", JSON.stringify(taskManager.tasks))
 
 

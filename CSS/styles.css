@@ -93,6 +93,7 @@ h1 {
     display: grid !important;
     grid-template-columns: 3fr 1fr !important;
     gap: 20px !important;
+    width: 100% !important;
 }
 
 .tituloYdescri {
