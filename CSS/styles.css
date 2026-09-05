@@ -13,7 +13,7 @@
 body {
     background: linear-gradient(95deg, #c1e1f1e0, #cdf7eee0);
     color: #334155;
-     min-height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -299,6 +299,7 @@ h1 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin-top: 30px;
     padding-top: 20px;
+
 }
 
 .footer-bottom {
@@ -307,6 +308,32 @@ h1 {
     padding: 0px 5px;
     border-radius: 8px;
     width: 150px;
+
+
+}
+
+.footer-content {
+    display: grid !important;
+    grid-template-columns: 3fr 1fr !important;
+    gap: 20px !important;
+    width: 100% !important;
+    
+}
+
+.contacto {
+    display: flex;
+    gap: 100px;
+    width: 100%;
+    align-items: center;
+    margin-right: 90px;
+}
+
+.redes {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 60px;
+    min-width: 120px;
 
 }
 
