@@ -4,9 +4,6 @@ let validacionfecha = document.getElementById("validacionfecha");
 let validationprio = document.getElementById("validationprio");
 
 
-
-
-
 //ALERTAS
 let alertTarea = document.getElementById("alertTarea")
 let alertDes = document.getElementById("alertDes")
@@ -22,13 +19,14 @@ function validFormFieldInput() {
     const fecha = validacionfecha.value;
     const prioridad = validationprio.value;
 
+ let formularioValido = true;
 
 
     if (nombre.trim() === "") {
         alertTarea.innerHTML = "Ingresa el nombre de la tarea"
         alertTarea.classList.remove("ocultaAlert");
         console.log("esta vacio, coloca la tarea")
-        return false
+        formularioValido = false;
     } else {
         alertTarea.classList.add("ocultaAlert");
     }
@@ -36,7 +34,7 @@ function validFormFieldInput() {
         alertDes.innerHTML = "La descripción es obligatoria"
         alertDes.classList.remove("ocultaAlert");
         console.log("esta vacio,coloca la descripcion ")
-        return false
+        formularioValido = false;
     } else {
         alertDes.classList.add("ocultaAlert");
     }
@@ -44,38 +42,27 @@ function validFormFieldInput() {
         alertFecha.innerHTML = "Selecciona una fecha"
         alertFecha.classList.remove("ocultaAlert");
         console.log("esta vacio,coloca la fecha")
-        return false
+        formularioValido = false;
     } else {
         alertFecha.classList.add("ocultaAlert");
     }
-    if (prioridad.trim() === "") {
+    if (prioridad.trim() ==="Selecciona") {
         alertPrio.innerHTML = "Selecciona una prioridad"
         alertPrio.classList.remove("ocultaAlert");
         console.log("esta vacio, coloca la prioridad")
-        return false
+       formularioValido = false;
     } else {
         alertPrio.classList.add("ocultaAlert");
     }
-    return true
+    return  formularioValido ;
 
 }
 
 
-let taskManager;
 
-const tareasGuardadas = localStorage.getItem("tarea");
-
-if (tareasGuardadas === null) {
-    taskManager = new TaskManager();
-} else {
-    const datos = JSON.parse(tareasGuardadas);
-
-    taskManager = new TaskManager();
-
-    taskManager.tasks = datos;
-}
-
-
+const taskManager = new TaskManager();
+taskManager.load();
+pintarTarea()
 /*taskManager.addTask(
  'Sacar la basura',
  'Sacar la basura al frente de la casa',
@@ -116,6 +103,7 @@ form.addEventListener("submit", function (event) {
             prioridad,
             status
         );
+        taskManager.save();
         console.log(taskManager.tasks);
         pintarTarea();
         //form.reset();
@@ -133,17 +121,17 @@ function pintarTarea() {
         let nuevaTarea = document.createElement("li");
         nuevaTarea.classList.add("list-group-item", "tarea");
 
-        let check =  "";
+        let check = "";
         if (taskManager.tasks[k].status == "Hecho") {
             nuevaTarea.classList.add("tareaCompletada");
-           check = "checked"
+            check = "checked"
         }
 
         nuevaTarea.innerHTML =
             '<div class="filaTarea">' +
             '<div class="tituloYdescri">' +
             '<div>' +
-            '<input class="form-check-input me-1 checkTarea" data-status="' + k + '" type="checkbox"   value=""  id="' + taskManager.tasks[k].id + '" '+ check +' >' +
+            '<input class="form-check-input me-1 checkTarea" data-status="' + k + '" type="checkbox"   value=""  id="' + taskManager.tasks[k].id + '" ' + check + ' >' +
             '<label class="form-check-label titulos-tarea" for="firstCheckbox">' + taskManager.tasks[k].name + '</label>' +
             ' </div>' +
             '<div class= "descripcion-tarea">' + taskManager.tasks[k].description + ' </div>' +
@@ -174,12 +162,13 @@ function pintarTarea() {
                 taskManager.tasks[parseInt(event.target.dataset.status)].status = "Hecho";
                 console.log("click lista tarea" + event.target.dataset.status);
 
+                taskManager.save();
                 pintarTarea();
 
             } else {
-            taskManager.tasks[parseInt(event.target.dataset.status)].status = "Por Hacer";
-            
-              pintarTarea();
+                taskManager.tasks[parseInt(event.target.dataset.status)].status = "Por Hacer";
+                taskManager.save();
+                pintarTarea();
             }
 
 
@@ -200,23 +189,10 @@ function pintarTarea() {
         });
     });
 
-    localStorage.setItem("tarea", JSON.stringify(taskManager.tasks))
+   
 
 
 }
 
 
 pintarTarea();
-
-
-
-
-
-
-
-
-
-
-
-
-

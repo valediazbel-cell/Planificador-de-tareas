@@ -140,10 +140,8 @@ h1 {
 .fec-pri-sta-borr {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 6px;
-    min-width: 120px;
+    align-items: flex-start;
+    gap: 8px;
 }
 
 .badge-prioridad {
@@ -236,15 +234,24 @@ h1 {
 
 
 /*Alerts*/
+.alertTarea {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.alertDes {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 .alertFecha {
     grid-column: 3;
     grid-row: 2;
-
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .alertPrio {
     grid-column: 4;
     grid-row: 2;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 /*Ocultar alert*/
@@ -273,6 +280,7 @@ h1 {
     background-color: #ffcdcd !important;
     padding: 0px 10px;
     border-radius: 8px;
+    border: 3px dotted #d05757;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
@@ -281,6 +289,7 @@ h1 {
     background-color: #fff3cd !important;
     padding: 0px 10px;
     border-radius: 8px;
+    border: 3px dotted #d0c657;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
@@ -288,11 +297,13 @@ h1 {
     background-color: #d1e7dd !important;
     padding: 0px 10px;
     border-radius: 8px;
+    border: 3px dotted #94d057;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 
 /*FOOTER*/
+
 .footer {
     background-color: #10AAB6;
     color: white;
@@ -302,30 +313,34 @@ h1 {
 
 }
 
-.footer-bottom {
-    color: #555252;
-    background-color: #a8eaf0;
-    padding: 0px 5px;
-    border-radius: 8px;
-    width: 150px;
 
-
-}
 
 .footer-content {
-    display: grid !important;
-    grid-template-columns: 3fr 1fr !important;
-    gap: 20px !important;
-    width: 100% !important;
-    
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .contacto {
     display: flex;
-    gap: 100px;
-    width: 100%;
+    flex-direction: column;
     align-items: center;
-    margin-right: 90px;
+    gap: 15px;
+}
+
+.contacto h3 {
+    margin: 0;
+}
+
+.contacto p {
+    margin: 0;
+}
+
+.datos-contacto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
 }
 
 .redes {
@@ -333,8 +348,6 @@ h1 {
     align-items: center;
     text-align: center;
     gap: 60px;
-    min-width: 120px;
-
 }
 
 .imagenRedes {
@@ -352,6 +365,18 @@ h1 {
 
 .gmail {
     color: white;
+}
+
+.footer-bottom {
+    color: #555252;
+    background-color: #a8eaf0;
+    padding: 0px 5px;
+    border-radius: 8px;
+    width: 150px;
+    margin: 20px auto 0;
+    text-align: center;
+
+
 }
 
 /*Para celular */
@@ -401,5 +426,41 @@ h1 {
     .tarea {
         margin: 0 !important;
         padding: 12px !important;
+    }
+
+    .datos-contacto {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .redes {
+        flex-direction: row;
+        gap: 40px;
+    }
+
+    .filaTarea {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+        width: 100% !important;
+    }
+
+    .fec-pri-sta-borr {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        width: 100%;
+        margin-top: 5px;
+
+    }
+
+    .fec-pri-sta-borr>* {
+        margin: 0 !important;
+        font-size: 15px;
+    }
+
+    .botonEliminar {
+        font-size: 13px;
     }
 }
