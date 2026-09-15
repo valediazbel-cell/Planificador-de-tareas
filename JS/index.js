@@ -19,7 +19,7 @@ function validFormFieldInput() {
     const fecha = validacionfecha.value;
     const prioridad = validationprio.value;
 
- let formularioValido = true;
+    let formularioValido = true;
 
 
     if (nombre.trim() === "") {
@@ -46,21 +46,22 @@ function validFormFieldInput() {
     } else {
         alertFecha.classList.add("ocultaAlert");
     }
-    if (prioridad.trim() ==="Selecciona") {
+    if (prioridad.trim() === "Selecciona") {
         alertPrio.innerHTML = "Selecciona una prioridad"
         alertPrio.classList.remove("ocultaAlert");
         console.log("esta vacio, coloca la prioridad")
-       formularioValido = false;
+        formularioValido = false;
     } else {
         alertPrio.classList.add("ocultaAlert");
     }
-    return  formularioValido ;
+    return formularioValido;
 
 }
 
 
 
 const taskManager = new TaskManager();
+
 taskManager.load();
 pintarTarea()
 /*taskManager.addTask(
@@ -183,13 +184,13 @@ function pintarTarea() {
             console.log("click emilinar tarea" + event.target.dataset.borrar);
 
             taskManager.tasks.splice(parseInt(event.target.dataset.borrar), 1);
-
+            taskManager.save();
             pintarTarea();
 
         });
     });
 
-   
+
 
 
 }
